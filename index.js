@@ -1,3 +1,5 @@
+const { assertFlowType } = require("@babel/types");
+
 const artists = [
   {
     "id": 0,
@@ -231,8 +233,7 @@ Use getArtistByIndex to do the following:
 Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
 function getArtistByIndex(array,index) {
-  let byName = array[index].name
-  return byName;
+  return `The artist at index ${array[index].id} is ${array[index].name}`;
 }
 
 console.log(getArtistByIndex(artists,0))
@@ -246,18 +247,16 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
-const Min_Year = 1900;
-const Max_Year =  2000;
 
-function get20s = (Data) => {
-  return result = artists.filter(artists) => {
-    const birthYear = parseInt(artists.years.split('-')[0])
-    const deathYear = parseInt(artists.years.split('-')[1])
-    return birthYear > Min_Year && deathYear <Max_Year
-  }
+function get20s(data){
+  let artistInThe20thCentury = [];
+  for(let i = 0;i<data.length; i++){
+    if(data[i].years.substring(7)<=2000 || data[i].years.substring(0.5) >= 1900 ) {
+      artistInThe20thCentury.push(data[i].name)
+    }
+  } return artistInThe20thCentury;
 }
 console.log(get20s(artists));
-
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -299,19 +298,17 @@ Example: addArtist(artists) should return the artists array with the above objec
 function addArtist(name, years, genre, nationality, bio) {
   let newId  = artists.length + 1;
   let newArtists = {
-    id: newId,
-    name,
-    years,
-    genre,
-    nationality,
-    bio,
+    id: 20,
+    name: 'Sofia',
+    years: '1993-2021',
+    genre: 'Web Design',
+    nationality: 'Kenyan',
+    bio: "I love making African vegan meals. I also enjoy volunteer work"
   }
-  artists.push(newArtists);
-  return newArtists;
+  addArtist(sofia);
+  console.log(artists[20])
 
 }
-console.log(addArtist('Michael Angelo', 1564-1475, 'Sculptur','Italian', '141'));
-console.log(addArtist ('Lady Gaga', 2001-2021, "singer", "White, '31'));
 
 
 
@@ -324,14 +321,14 @@ Use lotsOfArt to do the following:
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
 function lotsOfArt(array) {
-  let over100 = [];
+  let lotsOfArt = [];
   for (i = 0; < artists.length; i++){
     if (array[i].paintings >= 100){
       over100.push(array[i].name);
     }
-  } return over100;
+  } return lotsOfArt
 }
-console.log(this.lotsOfArt(artists));
+console.log(lotsOfArt(artists))
 
 
 /* ***** END OF TASKS ***** */
