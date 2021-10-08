@@ -271,7 +271,7 @@ For example, if removeArtist is invoked with the artists array and the number 0,
 function removeArtist(array,index) {
  let removed = []
  for (i = 0; i < array.length; i++){
-   if (array{i}.id === index){
+   if (array[i].id === index){
      removed.push (array[i].name)
      array.splice(index, 1)
    }
@@ -295,20 +295,25 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(name, years, genre, nationality, bio) {
-  let newId  = artists.length + 1;
-  let newArtists = {
-    id: 20,
-    name: 'Sofia',
-    years: '1993-2021',
-    genre: 'Web Design',
-    nationality: 'Kenyan',
-    bio: "I love making African vegan meals. I also enjoy volunteer work"
-  }
-  addArtist(sofia);
-  console.log(artists[20])
+function addArtist(arrayInfo) {
+  artists.push(arrayInfo)
 
 }
+const myInfo =[{
+id: 20,
+name: 'Sofia'
+genre: 'Web Design'
+nationality:'Kenyan'
+bio:'I love making African vegan meals. I also video games such as Mario'
+
+
+
+
+
+}];
+
+addArtist(myInfo);
+console.log(artists[20])
 
 
 
@@ -322,7 +327,7 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 
 function lotsOfArt(array) {
   let lotsOfArt = [];
-  for (i = 0; < artists.length; i++){
+  for (i = 0; < artists.length;i++){
     if (array[i].paintings >= 100){
       over100.push(array[i].name);
     }
